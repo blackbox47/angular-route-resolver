@@ -1,0 +1,10 @@
+<ul class="list-group">
+    <li *ngFor="let post of posts.post | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize"
+        class="list-group-item">
+        {{post.id}} {{post.title}}
+    </li>
+</ul>
+
+<ngb-pagination [collectionSize]="posts.post.length" [(page)]="page" [maxSize]="4" [rotate]="true" [ellipses]="false"
+    aria-label="Default pagination">
+</ngb-pagination>
